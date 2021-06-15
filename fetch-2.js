@@ -9,4 +9,4 @@ fetch( 'https://reqres.in/api/users' )
         console.log(respObj.page); // 1
         console.log(respObj.data); //(6) [{…}, {…}, {…}, {…}, {…}, {…}]
         console.log(respObj.support); //{url: "https://reqres.in/#support-heading", text: "To keep ReqRes free, contributions towards server costs are appreciated!"}
-    })
+    });
