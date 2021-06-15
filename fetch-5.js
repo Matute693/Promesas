@@ -1,19 +1,18 @@
 
 
-fetch('https://reqres.in/api/users/2')
+fetch('https://reqres.in/api/users/1000')
     .then(resp => {
-        
-        //El clone crea un clone de la respuesta y con esto podemos leer 2 veces el body
-        resp.clone().json()
-        .then(usuario => {
-            console.log(usuario.data);
-        });
-        resp.clone().json().then(usuario => {
-            console.log(usuario.data);
-        });
-        resp.json().then(usuario => {
-            console.log(usuario.data);
-        });
-    
+
+        if(resp.ok){
+            return resp.json();
+        } else {
+            // console.log('No existe el usuario 1000');
+            throw Error('No existe el usuario 1000')
+        }
     
     })
+    .then(console.log)
+    .catch(error => {
+        console.log('Error en la peticion');
+        console.log(error);
+    });
